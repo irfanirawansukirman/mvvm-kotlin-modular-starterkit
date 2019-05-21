@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MVVM Kotlin Modular Starterkit</string>
+    <string name="title_f_catlist">Module Cat List</string>
+    <string name="title_f_catdetail">Module Cat Detail</string>
+</resources>
