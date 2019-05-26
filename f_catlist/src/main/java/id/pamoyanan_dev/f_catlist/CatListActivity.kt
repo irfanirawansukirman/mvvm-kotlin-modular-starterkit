@@ -1,12 +1,20 @@
 package id.pamoyanan_dev.f_catlist
 
-import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import id.pamoyanan_dev.f_catlist.databinding.CatListActivityBinding
+import id.pamoyanan_dev.l_extras.base.BaseActivity
 
-class CatListActivity : AppCompatActivity() {
+class CatListActivity : BaseActivity<CatListActivityBinding>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.cat_list_activity)
+    override fun bindRootFragment() = CatListFragment.newInstance()
+
+    override fun bindFragmentContainerId() = R.id.frame_container
+
+    override fun bindLayoutRes() = R.layout.cat_list_activity
+
+    override fun bindToolbarId() = EMPTY_TOOLBAR
+
+    override fun onStartWork() {
+
     }
+
 }
