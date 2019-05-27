@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 import id.pamoyanan_dev.l_extras.base.BaseViewModelFactory
 
 /**
@@ -38,9 +39,8 @@ fun Context.navigatorImplicit(
     //=======================================
 }
 
-inline fun <reified T : ViewModel> Fragment.getViewModel(noinline creator: (() -> T)? = null): T {
-    return if (creator == null)
-        ViewModelProviders.of(this).get(T::class.java)
-    else
-        ViewModelProviders.of(this, BaseViewModelFactory(creator)).get(T::class.java)
+fun Context.showToast(
+    message: String
+) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }

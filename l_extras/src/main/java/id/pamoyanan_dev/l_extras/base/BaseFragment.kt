@@ -9,6 +9,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import id.pamoyanan_dev.l_extras.ext.showSnackbarDefault
+import id.pamoyanan_dev.l_extras.ext.showToast
 
 abstract class BaseFragment<VDB : ViewDataBinding, BVM : BaseViewModel> : Fragment() {
 
@@ -36,9 +38,11 @@ abstract class BaseFragment<VDB : ViewDataBinding, BVM : BaseViewModel> : Fragme
                     when (messageType) {
                         MESSAGE_SNACK_TYPE -> {
                             // show snack
+                            viewBinding.root.showSnackbarDefault(message, 0)
                         }
                         else -> {
                             // show toast
+                            requireContext().showToast(message)
                         }
                     }
                 }
