@@ -27,4 +27,3 @@ android {
 dependencies {
     api(project(":baseapp"))
 }
-

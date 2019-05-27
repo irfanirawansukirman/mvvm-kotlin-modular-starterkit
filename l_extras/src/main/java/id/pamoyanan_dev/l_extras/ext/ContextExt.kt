@@ -1,13 +1,8 @@
 package id.pamoyanan_dev.l_extras.ext
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import id.pamoyanan_dev.l_extras.base.BaseViewModelFactory
 
 /**
  * Using it for moving to another page with activity package name (usually modular package) with params
@@ -20,12 +15,14 @@ fun Context.navigatorImplicit(
 ) {
     val intent = Intent()
     try {
-        intent.intentParams()
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        intent.setClass(
-            this,
-            Class.forName(activityPackage)
-        )
+        intent.apply {
+            intentParams()
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            setClass(
+                requireNotNull(applicationContext),
+                Class.forName(activityPackage)
+            )
+        }
         startActivity(intent)
     } catch (e: Exception) {
         e.printStackTrace()
