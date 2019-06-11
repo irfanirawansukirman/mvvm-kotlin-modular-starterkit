@@ -1,2 +1,4 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="id.pamoyanan_dev.l_extras"/>
+          package="id.pamoyanan_dev.l_extras">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+</manifest>

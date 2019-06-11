@@ -22,15 +22,15 @@ abstract class BaseFragment<VDB : ViewDataBinding, BVM : BaseViewModel> : Fragme
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         viewBinding = DataBindingUtil.inflate(inflater, bindLayoutRes(), container, false)
 
+        viewBinding.let {
+            it.lifecycleOwner = this@BaseFragment
+        }
+
         return viewBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewBinding.let {
-            it.lifecycleOwner = this@BaseFragment
-        }
-
         baseViewModel = onSetViewModel()
         baseViewModel.apply {
             eventGlobalMessage.observe(this@BaseFragment, Observer { message ->

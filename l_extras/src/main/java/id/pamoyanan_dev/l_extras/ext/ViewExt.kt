@@ -1,6 +1,9 @@
 package id.pamoyanan_dev.l_extras.ext
 
 import android.support.design.widget.Snackbar
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.View
 
 fun View.visible(
@@ -26,4 +29,22 @@ fun View.showSnackbarDefault(
     duration: Int = 3000
 ) {
     Snackbar.make(this, message, duration).show()
+}
+
+fun RecyclerView.verticalListStyle() {
+    layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+    setHasFixedSize(true)
+    itemAnimator = DefaultItemAnimator()
+    setItemViewCacheSize(30)
+    isDrawingCacheEnabled = true
+    drawingCacheQuality = View.DRAWING_CACHE_QUALITY_HIGH
+}
+
+fun RecyclerView.horizontalListStyle() {
+    layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+    setHasFixedSize(true)
+    itemAnimator = DefaultItemAnimator()
+    setItemViewCacheSize(30)
+    isDrawingCacheEnabled = true
+    drawingCacheQuality = View.DRAWING_CACHE_QUALITY_HIGH
 }

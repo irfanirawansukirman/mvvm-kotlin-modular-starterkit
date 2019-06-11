@@ -7,7 +7,7 @@
             dist:instant="false"
             dist:onDemand="true"
             dist:title="@string/title_f_catdetail">
-        <dist:fusing dist:include="true"/>
+        <dist:fusing dist:include="false"/>
     </dist:module>
 
     <application>

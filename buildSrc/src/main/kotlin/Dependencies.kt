@@ -14,6 +14,7 @@ object BuildPlugins {
     const val kotlinAndroid = "kotlin-android"
     const val kotlinKapt = "kotlin-kapt"
     const val kotlinAndroidExtensions = "kotlin-android-extensions"
+    const val kotlinSerialization = "kotlinx-serialization"
 }
 
 // module app level
@@ -23,7 +24,7 @@ object AppConfigurations {
     const val applicationBuild: Int = 1
 
     object ofNumberSdk {
-        const val minimum: Int = 19
+        const val minimum: Int = 21
         const val compile: Int = 28
         const val maximum = compile
     }
@@ -40,6 +41,7 @@ object GoogleLibraries {
         const val crashlytics = "2.9.5"
         const val room = "1.1.1"
         const val aac = "1.1.1"
+        const val kCoroutines = "1.0.1"
     }
 
     const val appCompatv7 = "com.android.support:appcompat-v7:${Versions.supportLibrary}"
@@ -52,6 +54,9 @@ object GoogleLibraries {
 
     const val kotlinStdLib7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     const val kotlinStdLib8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    const val kotlinCoroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kCoroutines}"
+    const val kotlinCoroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kCoroutines}"
+    const val kotlinSerialization = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.9.1"
 
     const val playMaps = "com.google.android.gms:play-services-maps:${Versions.playService}"
     const val playLocation = "com.google.android.gms:play-services-location:${Versions.playService}"
@@ -89,14 +94,13 @@ object GeneralLibraries {
         const val rxAndroid = "2.1.0"
         const val timber = "4.5.1"
         const val stetho = "1.5.0"
-
-        const val lala = true
     }
 
     object Network {
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
         const val retrofitAdapterRx2 = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
         const val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+        const val retrofitMoshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
         const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
         const val okhttpLogging = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
     }

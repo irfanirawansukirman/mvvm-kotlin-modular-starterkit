@@ -5,8 +5,11 @@ import id.pamoyanan_dev.l_extras.base.BaseFragment
 import id.pamoyanan_dev.l_extras.ext.getViewModel
 import id.pamoyanan_dev.l_extras.ext.putArgs
 import id.pamoyanan_dev.mvvmkotlinmodularstarterkit.MvvmApp
+import kotlinx.android.synthetic.main.cat_list_fragment.*
 
 class CatListFragment : BaseFragment<CatListFragmentBinding, CatListVM>() {
+
+    override fun bindLayoutRes() = R.layout.cat_list_fragment
 
     override fun onSetViewModel(): CatListVM {
         return getViewModel { CatListVM(MvvmApp.instance) }
@@ -14,14 +17,14 @@ class CatListFragment : BaseFragment<CatListFragmentBinding, CatListVM>() {
 
     override fun onSetInstrument() {
         viewBinding.apply {
-            catViewModel = baseViewModel
+            viewModel = baseViewModel
         }
     }
 
-    override fun bindLayoutRes() = R.layout.cat_list_fragment
-
     override fun onStartWork() {
         baseViewModel.startWork()
+
+        rec_catlist.adapter = CatListAdapter()
     }
 
     override fun onLoadObserver(baseViewModel: CatListVM) {
@@ -29,7 +32,7 @@ class CatListFragment : BaseFragment<CatListFragmentBinding, CatListVM>() {
     }
 
     companion object {
-        fun newInstance() = CatListFragment().putArgs {  }
+        fun newInstance() = CatListFragment().putArgs { }
     }
 
 }

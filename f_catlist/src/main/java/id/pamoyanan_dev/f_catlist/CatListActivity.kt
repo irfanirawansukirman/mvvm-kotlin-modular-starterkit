@@ -17,9 +17,9 @@ class CatListActivity : BaseActivity<CatListActivityBinding>() {
     override fun bindToolbarId() = EMPTY_TOOLBAR
 
     override fun onStartWork() {
-        Handler().postDelayed({
-            navigatorImplicit(AppNavigation.getCatDetailRoute()) {}
-        }, 1500)
+         Handler().postDelayed({
+             navigatorImplicit(AppNavigation.getCatDetailRoute()) {}
+         }, 1500)
     }
 
 }
