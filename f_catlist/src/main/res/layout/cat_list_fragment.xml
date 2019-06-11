@@ -4,16 +4,30 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
             type="id.pamoyanan_dev.f_catlist.CatListVM" />
     </data>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rec_catlist"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        app:orientationList="@{safeUnbox(viewModel.verticalList)}"
-        app:recyclerviewData="@{viewModel.movieList}"/>
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rec_catlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:orientationList="@{safeUnbox(viewModel.verticalList)}"
+            app:recyclerviewData="@{viewModel.movieList}" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{viewModel.eventShowProgress ? View.VISIBLE : View.GONE}" />
+    </FrameLayout>
 </layout>
