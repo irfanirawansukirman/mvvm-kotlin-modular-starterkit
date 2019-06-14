@@ -43,11 +43,13 @@ dependencies {
     api(GoogleLibraries.kotlinCoroutinesCore)
     api(GoogleLibraries.kotlinCoroutinesAndroid)
     api(GoogleLibraries.kotlinSerialization)
+    api("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
 
     api(GeneralLibraries.Network.retrofit)
     api(GeneralLibraries.Network.retrofitMoshiConverter)
     api(GeneralLibraries.Network.okhttp)
     api(GeneralLibraries.Network.okhttpLogging)
-    api("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
+
+    api(GeneralLibraries.Utils.gson)
 }
 

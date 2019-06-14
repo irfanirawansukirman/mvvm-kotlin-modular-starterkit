@@ -4,13 +4,21 @@
     <data>
 
         <variable
-            name="movieTitle"
-            type="String" />
+            name="result"
+            type="id.pamoyanan_dev.l_extras.data.model.Result" />
+
+        <variable
+            name="catListItemCallback"
+            type="id.pamoyanan_dev.f_catlist.CatListItemCallback" />
     </data>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{() -> catListItemCallback.onMovieClicked(result)}"
         android:padding="16dp"
-        android:text="@{movieTitle}" />
+        android:text="@{result.original_title}" />
 </layout>

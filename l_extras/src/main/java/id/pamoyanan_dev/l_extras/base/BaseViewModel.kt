@@ -16,13 +16,15 @@ abstract class BaseViewModel(application: Application) : AndroidViewModel(applic
     var eventGlobalMessage = SingleLiveEvent<String>()
     var verticalList = ObservableField(0)
     var horizontalList = ObservableField(1)
-    val repository: AppRepository = AppRepository(ApiService.newBuilder(application))
+    val repository: AppRepository by lazy {
+        AppRepository(ApiService.newBuilder(application))
+    }
 
-    val parentJob = Job()
-    val coroutineContext: CoroutineContext
+    private val parentJob = Job()
+    private val coroutinesContext: CoroutineContext
         get() = parentJob + Dispatchers.IO
 
-    val scope = CoroutineScope(coroutineContext)
+    val scope = CoroutineScope(coroutinesContext)
 
     open fun startWork() {}
 

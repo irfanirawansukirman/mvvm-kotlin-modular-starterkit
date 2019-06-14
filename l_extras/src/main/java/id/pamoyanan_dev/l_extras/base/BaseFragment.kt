@@ -65,5 +65,7 @@ abstract class BaseFragment<VDB : ViewDataBinding, BVM : BaseViewModel> : Fragme
     companion object {
         const val MESSAGE_TOAST_TYPE = 0
         const val MESSAGE_SNACK_TYPE = 1
+
+        const val MOVIE_OBJ = "MOVIE_OBJ"
     }
 }

@@ -84,7 +84,7 @@ object GoogleLibraries {
 object GeneralLibraries {
     private object Versions {
         const val retrofit = "2.3.0"
-        const val okhttp = "3.10.0"
+        const val okhttp = "3.12.0"
         const val glide = "4.8.0"
         const val circleImageView = "2.2.0"
         const val zxingCore = "3.2.1"
@@ -132,6 +132,7 @@ object GeneralLibraries {
 
     object Utils {
         const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+        const val gson = "com.google.code.gson:gson:2.8.5"
     }
 }
 

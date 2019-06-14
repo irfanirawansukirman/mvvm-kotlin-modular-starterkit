@@ -2,6 +2,7 @@ package id.pamoyanan_dev.f_catlist
 
 import id.pamoyanan_dev.f_catlist.databinding.CatListActivityBinding
 import id.pamoyanan_dev.l_extras.base.BaseActivity
+import kotlinx.serialization.ImplicitReflectionSerializer
 
 class CatListActivity : BaseActivity<CatListActivityBinding>() {
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="id.pamoyanan_dev.mvvmkotlinmodularstarterkit">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="id.pamoyanan_dev.mvvmkotlinmodularstarterkit">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
