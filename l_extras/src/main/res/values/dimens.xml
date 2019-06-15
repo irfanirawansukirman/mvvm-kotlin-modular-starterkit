@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dimens for margin n' padding -->
+    <dimen name="dimens_4dp">4dp</dimen>
+    <dimen name="dimens_16dp">16dp</dimen>
+
+    <!-- Dimens for text size -->
+    <dimen name="size_18sp">18sp</dimen>
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">l_extras</string>
+    <string name="location_message_latlng_invalid">Location is not found</string>
+</resources>
