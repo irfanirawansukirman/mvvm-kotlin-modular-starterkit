@@ -7,6 +7,7 @@ import id.pamoyanan_dev.f_home.databinding.HomeFragmentBinding
 import id.pamoyanan_dev.l_extras.base.BaseFragment
 import id.pamoyanan_dev.l_extras.ext.getViewModel
 import id.pamoyanan_dev.l_extras.ext.putArgs
+import id.pamoyanan_dev.l_extras.ext.verticalListStyle
 import kotlinx.android.synthetic.main.home_fragment.*
 import org.arabeyes.itl.hijri.ConvertedDate
 import org.arabeyes.itl.hijri.UmmAlqura
@@ -36,27 +37,27 @@ class HomeFragment : BaseFragment<HomeFragmentBinding, HomeVM>() {
 
         // Initialize
         val calculator = org.arabeyes.itl.prayertime.Prayer()
-            .setMethod(StandardMethod.EGYPT_SURVEY) // Egyptian General Authority of Survey
-            .setLocation(latitude, longitude, 0.0) // lat, lng, height AMSL
-            .setPressure(1010.0)
-            .setTemperature(10.0)
-            .setDate(GregorianCalendar()) // today, here
+                .setMethod(StandardMethod.EGYPT_SURVEY) // Egyptian General Authority of Survey
+                .setLocation(latitude, longitude, 0.0) // lat, lng, height AMSL
+                .setPressure(1010.0)
+                .setTemperature(10.0)
+                .setDate(GregorianCalendar()) // today, here
         // or
         calculator.setDate(Date(), TimeZone.getDefault())
         // or
         calculator.setMethod(
-            Method.fromStandard(StandardMethod.EGYPT_NEW)
-                .setUseOffset(true)
-                .setOffsetMinutes(
-                    doubleArrayOf(
-                        0.0, // fajr
-                        -0.5, // sunrise -30 sec
-                        2.0, // zuhr +2 min
-                        0.0, // assr
-                        0.0, // maghrib
-                        0.0
-                    )// ishaa
-                )
+                Method.fromStandard(StandardMethod.EGYPT_NEW)
+                        .setUseOffset(true)
+                        .setOffsetMinutes(
+                                doubleArrayOf(
+                                        0.0, // fajr
+                                        -0.5, // sunrise -30 sec
+                                        2.0, // zuhr +2 min
+                                        0.0, // assr
+                                        0.0, // maghrib
+                                        0.0
+                                )// ishaa
+                        )
         )
 
         val names = TimeNames.getInstance(null)
@@ -66,10 +67,10 @@ class HomeFragment : BaseFragment<HomeFragmentBinding, HomeVM>() {
         // Calculate and print each time
         for ((key, value) in calculator.prayerTimes) {
             System.out.printf(
-                "%s\t%02d:%02d\n",
-                names.get(key),
-                value.hour,
-                value.minute
+                    "%s\t%02d:%02d\n",
+                    names.get(key),
+                    value.hour,
+                    value.minute
             )
         }
         // or
@@ -106,7 +107,6 @@ class HomeFragment : BaseFragment<HomeFragmentBinding, HomeVM>() {
         println(date.formatSource("EEE, d MMM yyyy"))
         println(date.formatSource("EEE, dd-MM-yy"))
         println(date.toDate())
-        txt_date.text = date.format("EEEE, d MMMM yyyy G")
 
         println("=== FROM UMM AL-QURA ===")
 
@@ -120,6 +120,11 @@ class HomeFragment : BaseFragment<HomeFragmentBinding, HomeVM>() {
         println(date.formatSource("EEE, d MMM yyyy"))
         println(date.formatSource("EEE, dd-MM-yy"))
         println(date.toDate())
+
+        rec_home.apply {
+            verticalListStyle()
+            adapter = HomeAdapter()
+        }
     }
 
     override fun onSetInstrument() {

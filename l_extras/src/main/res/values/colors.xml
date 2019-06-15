@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#009689</color>
-    <color name="greyView">#e5e5e5</color>
+    <color name="colorPrimary">#3A3A41</color>
+    <color name="colorPrimaryDark">#27282E</color>
+    <color name="colorAccent">#4BAADB</color>
+
+    <color name="greyTextPrimary">#B6BAC0</color>
+    <color name="greyView">#E5E5E5</color>
 </resources>

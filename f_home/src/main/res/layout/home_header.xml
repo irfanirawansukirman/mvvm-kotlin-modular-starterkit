@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimens_12dp"
+            android:orientation="vertical"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="@dimen/dimens_4dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:padding="@dimen/dimens_16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_share_24dp"
+                    android:fontFamily="@font/fs_joey_bold"
+                    android:text="@string/dummy_time"
+                    android:textColor="@color/greyTextPrimary"
+                    android:textSize="@dimen/size_24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_2dp"
+                    android:fontFamily="@font/fs_joey"
+                    android:text="06 Menit 54 detik"
+                    android:textColor="@color/greyTextPrimary"
+                    android:textSize="@dimen/size_16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_2dp"
+                    android:fontFamily="@font/fs_joey"
+                    android:text="10 Ramadhan 1440H di Kota Bandung"
+                    android:textColor="@color/greyTextPrimary"
+                    android:textSize="@dimen/size_16sp" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens_12dp"
+            android:layout_marginRight="@dimen/size_12sp"
+            android:layout_marginBottom="@dimen/size_12sp"
+            android:orientation="vertical"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="@dimen/dimens_4dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dimens_16dp"
+                android:paddingBottom="@dimen/dimens_16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimens_32dp"
+                        android:layout_height="@dimen/dimens_32dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_quran_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimens_4dp"
+                        android:fontFamily="@font/fs_joey"
+                        android:text="Al-Qur'an"
+                        android:textColor="@color/greyTextPrimary"
+                        android:textSize="@dimen/size_12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimens_32dp"
+                        android:layout_height="@dimen/dimens_32dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_pray_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimens_4dp"
+                        android:fontFamily="@font/fs_joey"
+                        android:gravity="center"
+                        android:text="Dzikir"
+                        android:textColor="@color/greyTextPrimary"
+                        android:textSize="@dimen/size_12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimens_32dp"
+                        android:layout_height="@dimen/dimens_32dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_compass_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimens_4dp"
+                        android:fontFamily="@font/fs_joey"
+                        android:text="Kiblat"
+                        android:textColor="@color/greyTextPrimary"
+                        android:textSize="@dimen/size_12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimens_32dp"
+                        android:layout_height="@dimen/dimens_32dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_islamic_mosque_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimens_4dp"
+                        android:fontFamily="@font/fs_joey"
+                        android:text="Masjid"
+                        android:textColor="@color/greyTextPrimary"
+                        android:textSize="@dimen/size_12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</layout>
