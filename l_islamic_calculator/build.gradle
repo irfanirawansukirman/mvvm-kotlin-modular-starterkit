@@ -1,0 +1,25 @@
+// reference L https://github.com/fikr4n/itl-java
+apply plugin: 'java'
+
+version = '0.7.0'
+sourceCompatibility = "1.6"
+targetCompatibility = "1.6"
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+// Running: itl-java:itl [clean build copyToApp]
+//task copyToApp(type: Copy) {
+//    from jar
+//    into project(':app').file('libs')
+//}
+
+// Exporting: itl-java:itl [clean build dist]
+task dist(type: Zip) {
+    from jar
+    from file('../COPYING')
+    from file('../AUTHORS')
+    from file('../README.md')
+    from file('../README.orig.md')
+}

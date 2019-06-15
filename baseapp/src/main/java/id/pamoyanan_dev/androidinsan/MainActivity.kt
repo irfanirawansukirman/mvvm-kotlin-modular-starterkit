@@ -6,17 +6,21 @@ import android.location.Location
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.location.LocationListener
 import id.ac.unpad.profolio.util.DialogUtil
+import id.pamoyanan_dev.androidinsan.AppConst.LOC_LAT
+import id.pamoyanan_dev.androidinsan.AppConst.LOC_LONG
+import id.pamoyanan_dev.androidinsan.AppNavigation.getHomeRoute
 import id.pamoyanan_dev.l_extras.base.BaseActivityWithLocation
+import id.pamoyanan_dev.l_extras.ext.navigatorImplicit
 import id.pamoyanan_dev.l_extras.ext.showToast
 import java.io.IOException
 import java.util.*
 
 class MainActivity : BaseActivityWithLocation(),
-        DialogUtil.AlertCallbackDialog,
-        GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener, LocationListener,
-        BaseActivityWithLocation.GooglePlayServiceCallback,
-        BaseActivityWithLocation.LastLocationCallback {
+    DialogUtil.AlertCallbackDialog,
+    GoogleApiClient.ConnectionCallbacks,
+    GoogleApiClient.OnConnectionFailedListener, LocationListener,
+    BaseActivityWithLocation.GooglePlayServiceCallback,
+    BaseActivityWithLocation.LastLocationCallback {
 
     private var locAddress = ""
 
@@ -52,10 +56,10 @@ class MainActivity : BaseActivityWithLocation(),
                 val geocoder = Geocoder(this, Locale.getDefault())
 
                 addresses = geocoder.getFromLocation(
-                        location.latitude,
-                        location.longitude,
-                        // In this sample, we get just a single address.
-                        1
+                    location.latitude,
+                    location.longitude,
+                    // In this sample, we get just a single address.
+                    1
                 )
             } catch (ioException: IOException) {
                 // Catch network or other I/O problems.
@@ -79,7 +83,10 @@ class MainActivity : BaseActivityWithLocation(),
                 }
 
                 if (locAddress.isNotEmpty()) {
-                    showToast("Alamat Anda : $locAddress. Lat: ${location.latitude} Long: ${location.longitude}")
+                    navigatorImplicit(getHomeRoute()) {
+                        putExtra(LOC_LAT, location.latitude)
+                        putExtra(LOC_LONG, location.longitude)
+                    }
                 }
             }
         } catch (e: Exception) {
