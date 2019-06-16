@@ -12,6 +12,7 @@ import id.pamoyanan_dev.androidinsan.AppNavigation.getHomeRoute
 import id.pamoyanan_dev.l_extras.base.BaseActivityWithLocation
 import id.pamoyanan_dev.l_extras.ext.navigatorImplicit
 import id.pamoyanan_dev.l_extras.ext.showToast
+import id.pamoyanan_dev.l_extras.util.Preference
 import java.io.IOException
 import java.util.*
 

@@ -66,6 +66,9 @@ abstract class BaseFragment<VDB : ViewDataBinding, BVM : BaseViewModel> : Fragme
         const val MESSAGE_TOAST_TYPE = 0
         const val MESSAGE_SNACK_TYPE = 1
 
-        const val MOVIE_OBJ = "MOVIE_OBJ"
+        // preference key
+        const val QIBLA_DEGREE = "QIBLA_DEGREE"
+
+        const val LOCATION_REQUEST_CODE = 123
     }
 }

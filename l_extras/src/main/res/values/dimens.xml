@@ -12,6 +12,7 @@
     <dimen name="dimens_32dp">32dp</dimen>
     <dimen name="dimens_40dp">40dp</dimen>
     <dimen name="dimens_48dp">48dp</dimen>
+    <dimen name="dimens_56dp">56dp</dimen>
 
     <!-- Dimens for text size -->
     <dimen name="size_12sp">12sp</dimen>

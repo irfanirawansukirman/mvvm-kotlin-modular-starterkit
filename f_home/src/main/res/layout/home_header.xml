@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="homeActionListener"
+            type="id.pamoyanan_dev.f_home.HomeActionListener" />
     </data>
 
     <LinearLayout
@@ -26,6 +29,7 @@
                 android:background="?selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true"
+                android:onClick="@{() -> homeActionListener.onHeaderMenuSelected(`qur'an`)}"
                 android:orientation="vertical"
                 android:padding="@dimen/dimens_16dp">
 
@@ -109,6 +113,7 @@
                     android:background="?selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:focusable="true"
+                    android:onClick="@{() -> homeActionListener.onHeaderMenuSelected(`dzikir`)}"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -137,6 +142,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:gravity="center"
+                    android:onClick="@{() -> homeActionListener.onHeaderMenuSelected(`kiblat`)}"
                     android:orientation="vertical">
 
                     <ImageView
@@ -163,6 +169,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:gravity="center"
+                    android:onClick="@{() -> homeActionListener.onHeaderMenuSelected(`masjid`)}"
                     android:orientation="vertical">
 
                     <ImageView

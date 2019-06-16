@@ -7,6 +7,7 @@ import android.support.annotation.IdRes
 import android.support.annotation.LayoutRes
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import id.pamoyanan_dev.l_extras.ext.replaceFragmentInActivity
 
 abstract class BaseActivity<VDB : ViewDataBinding> : AppCompatActivity() {
@@ -28,6 +29,14 @@ abstract class BaseActivity<VDB : ViewDataBinding> : AppCompatActivity() {
         }
     }
 
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean = when {
+        item?.itemId == android.R.id.home -> {
+            onBackPressed()
+            true
+        }
+        else -> false
+    }
+
     private fun setupToolbar() {
         if (bindToolbarId() != EMPTY_TOOLBAR) {
             setSupportActionBar(findViewById(bindToolbarId()))
@@ -47,8 +56,8 @@ abstract class BaseActivity<VDB : ViewDataBinding> : AppCompatActivity() {
     @IdRes
     abstract fun bindToolbarId(): Int
 
-    abstract fun bindRootFragment() : Fragment
-    abstract fun bindFragmentContainerId() : Int
+    abstract fun bindRootFragment(): Fragment
+    abstract fun bindFragmentContainerId(): Int
     abstract fun onStartWork()
 
     companion object {

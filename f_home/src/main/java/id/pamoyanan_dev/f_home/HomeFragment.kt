@@ -2,10 +2,12 @@ package id.pamoyanan_dev.f_home
 
 import id.pamoyanan_dev.androidinsan.AppConst.LOC_LAT
 import id.pamoyanan_dev.androidinsan.AppConst.LOC_LONG
+import id.pamoyanan_dev.androidinsan.AppNavigation.getKiblatRoute
 import id.pamoyanan_dev.androidinsan.InsanApp
 import id.pamoyanan_dev.f_home.databinding.HomeFragmentBinding
 import id.pamoyanan_dev.l_extras.base.BaseFragment
 import id.pamoyanan_dev.l_extras.ext.getViewModel
+import id.pamoyanan_dev.l_extras.ext.navigatorImplicit
 import id.pamoyanan_dev.l_extras.ext.putArgs
 import id.pamoyanan_dev.l_extras.ext.verticalListStyle
 import kotlinx.android.synthetic.main.home_fragment.*
@@ -17,7 +19,24 @@ import org.arabeyes.itl.prayertime.TimeNames
 import org.arabeyes.itl.prayertime.TimeType
 import java.util.*
 
-class HomeFragment : BaseFragment<HomeFragmentBinding, HomeVM>() {
+class HomeFragment : BaseFragment<HomeFragmentBinding, HomeVM>(), HomeActionListener {
+
+    override fun onHeaderMenuSelected(type: String) {
+        when(type) {
+            "qu'ran" -> {
+
+            }
+            "dzikir" -> {
+
+            }
+            "kiblat" -> {
+                requireContext().navigatorImplicit(getKiblatRoute()) {}
+            }
+            else -> {
+
+            }
+        }
+    }
 
     override fun bindLayoutRes() = R.layout.home_fragment
 
@@ -83,8 +102,8 @@ class HomeFragment : BaseFragment<HomeFragmentBinding, HomeVM>() {
 
         // Calculate and print qibla direction
         val qibla = calculator.northQibla
-        println("Qibla: $qibla")
-        println("Qibla: " + qibla.toDecimal())
+        println("Qiblat: $qibla")
+        println("Qiblat: " + qibla.toDecimal())
 
         println("=== TO UMM AL-QURA ===")
 
@@ -123,7 +142,7 @@ class HomeFragment : BaseFragment<HomeFragmentBinding, HomeVM>() {
 
         rec_home.apply {
             verticalListStyle()
-            adapter = HomeAdapter()
+            adapter = HomeAdapter(this@HomeFragment)
         }
     }
 

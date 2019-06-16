@@ -1,1 +1,1 @@
-include ':baseapp', ':l_extras', ':f_home', ':l_islamic_calculator'
+include ':baseapp', ':l_extras', ':f_home', ':l_islamic_calculator', ':f_kiblat'
