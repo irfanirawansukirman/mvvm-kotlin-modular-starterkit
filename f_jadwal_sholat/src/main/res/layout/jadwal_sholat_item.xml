@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="title" type="String"/>
+        <variable name="time" type="String"/>
+        <variable name="isSound" type="Boolean"/>
+    </data>
+
+    <LinearLayout
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimens_16dp">
+
+        <TextView
+                android:text="@{title}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fs_joey"
+                android:gravity="center_vertical"
+                android:textColor="@color/greyTextPrimary"
+                android:textSize="@dimen/size_18sp"
+                tools:text="@string/app_name"/>
+
+        <TextView
+                android:text="@{time}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/fs_joey"
+                android:textColor="@color/greyTextPrimary"
+                android:textSize="@dimen/size_18sp"
+                tools:text="@string/app_name"/>
+
+        <Switch
+                android:checked="@{safeUnbox(isSound)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimens_16dp"/>
+    </LinearLayout>
+</layout>

@@ -30,7 +30,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-    dynamicFeatures = mutableSetOf(":f_home", ":f_kiblat")
+    dynamicFeatures = mutableSetOf(":f_home", ":f_kiblat", ":f_jadwal_sholat", ":f_baru")
 
 }
 

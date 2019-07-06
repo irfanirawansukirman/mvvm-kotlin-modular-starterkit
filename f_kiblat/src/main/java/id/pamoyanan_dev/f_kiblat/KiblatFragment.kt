@@ -8,6 +8,7 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.view.animation.Animation
 import android.view.animation.RotateAnimation
+import id.pamoyanan_dev.androidinsan.AppConst.QIBLA_DEGREE
 import id.pamoyanan_dev.androidinsan.InsanApp
 import id.pamoyanan_dev.f_kiblat.databinding.KiblatFragmentBinding
 import id.pamoyanan_dev.l_extras.base.BaseFragment

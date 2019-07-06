@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
+import android.net.Uri
 import android.os.Build
 import android.provider.Settings
 import android.text.TextUtils
@@ -39,6 +40,10 @@ fun Context.navigatorImplicit(
     //        putExtra("KEY2" , "VALUE2")
     //    }
     //=======================================
+}
+
+fun Context.navigatorActionView(url: String) {
+    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 }
 
 fun Context.showToast(

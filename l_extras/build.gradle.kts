@@ -46,7 +46,15 @@ dependencies {
     api(GoogleLibraries.kotlinCoroutinesCore)
     api(GoogleLibraries.kotlinCoroutinesAndroid)
     api(GoogleLibraries.kotlinSerialization)
-    api("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
+    api(GoogleLibraries.kotlinCoroutinesAdapter)
+
+    api(GoogleLibraries.fireJob)
+
+    api(GoogleLibraries.aacRoomRuntime)
+
+    kapt(GoogleLibraries.aacRoomCompiler)
+
+    api(GeneralLibraries.Debugging.stetho)
 
     api(GeneralLibraries.Network.retrofit)
     api(GeneralLibraries.Network.retrofitMoshiConverter)

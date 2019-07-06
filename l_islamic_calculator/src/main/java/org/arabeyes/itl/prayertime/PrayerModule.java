@@ -834,6 +834,13 @@ class PrayerModule {
                 break;
 
             case EGYPT_SURVEY:
+//                conf.fajrAng = 20;
+//                conf.ishaaAng = 18;
+                conf.fajrAng = 19.5;
+                conf.ishaaAng = 17.5;
+                break;
+
+            case MUHAMMADIYAH:
                 conf.fajrAng = 20;
                 conf.ishaaAng = 18;
                 break;

@@ -1,17 +1,38 @@
 package id.pamoyanan_dev.l_extras.data
 
-import id.pamoyanan_dev.l_extras.base.BaseRepository
+import id.pamoyanan_dev.l_extras.data.model.ApiResponse
+import id.pamoyanan_dev.l_extras.data.model.JadwalSholat
 import id.pamoyanan_dev.l_extras.data.model.Result
-import id.pamoyanan_dev.l_extras.data.remote.ApiService
+import id.pamoyanan_dev.l_extras.data.source.AppDataSource
+import id.pamoyanan_dev.l_extras.data.source.local.LocalDataSource
+import id.pamoyanan_dev.l_extras.data.source.remote.RemoteDataSource
 
-class AppRepository(private val apiService: ApiService) : BaseRepository() {
+class AppRepository(
+    private val remoteDataSource: AppDataSource,
+    private val localDataSource: AppDataSource
+) : AppDataSource {
 
-    suspend fun getMovieList(): List<Result>? {
-        val movieResponse = safeApiCall(
-            call = { apiService.getMoviesAsync().await() },
-            errorMessage = "Error Fetching Popular Movies"
-        )
+    override suspend fun getAllJadwalSholat(): List<JadwalSholat> {
+        return localDataSource.getAllJadwalSholat()
+    }
 
-        return movieResponse?.results
+    override suspend fun getAllMovies(): ApiResponse<List<Result>> {
+        return remoteDataSource.getAllMovies()
+    }
+
+    override suspend fun insetAllJadwalSholat(data: List<JadwalSholat>) {
+        localDataSource.insetAllJadwalSholat(data)
+    }
+
+    companion object {
+        var mRepository: AppRepository? = null
+
+        @JvmStatic
+        fun getInstance(dataRemoteSource: RemoteDataSource, dataLocalSource: LocalDataSource): AppRepository {
+            if (mRepository == null) {
+                mRepository = AppRepository(remoteDataSource = dataRemoteSource, localDataSource = dataLocalSource)
+            }
+            return mRepository!!
+        }
     }
 }

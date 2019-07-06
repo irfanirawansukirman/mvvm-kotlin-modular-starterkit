@@ -4,7 +4,8 @@ import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.databinding.ObservableField
 import id.pamoyanan_dev.l_extras.data.AppRepository
-import id.pamoyanan_dev.l_extras.data.remote.ApiService
+import id.pamoyanan_dev.l_extras.data.source.remote.ApiService
+import id.pamoyanan_dev.l_extras.util.Injection
 import id.pamoyanan_dev.l_extras.util.SingleLiveEvent
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +18,7 @@ abstract class BaseViewModel(application: Application) : AndroidViewModel(applic
     var verticalList = ObservableField(0)
     var horizontalList = ObservableField(1)
     val repository: AppRepository by lazy {
-        AppRepository(ApiService.newBuilder(application))
+        Injection.provideGitsRepository(application)
     }
 
     private val parentJob = Job()

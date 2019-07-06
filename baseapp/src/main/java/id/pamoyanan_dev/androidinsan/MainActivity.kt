@@ -8,11 +8,11 @@ import com.google.android.gms.location.LocationListener
 import id.ac.unpad.profolio.util.DialogUtil
 import id.pamoyanan_dev.androidinsan.AppConst.LOC_LAT
 import id.pamoyanan_dev.androidinsan.AppConst.LOC_LONG
+import id.pamoyanan_dev.androidinsan.AppNavigation.getBaruRoute
 import id.pamoyanan_dev.androidinsan.AppNavigation.getHomeRoute
 import id.pamoyanan_dev.l_extras.base.BaseActivityWithLocation
 import id.pamoyanan_dev.l_extras.ext.navigatorImplicit
 import id.pamoyanan_dev.l_extras.ext.showToast
-import id.pamoyanan_dev.l_extras.util.Preference
 import java.io.IOException
 import java.util.*
 
@@ -71,7 +71,6 @@ class MainActivity : BaseActivityWithLocation(),
 
             // Handle case where no address was found.
             if (addresses.isNotEmpty()) {
-
                 val address = addresses[0]
                 // Fetch the address lines using getAddressLine,
                 // join them, and send them to the thread.

@@ -52,4 +52,8 @@ public enum StandardMethod {
      * 11: Morocco Awqaf, Morocco
      */
     MOROCCO_AWQAF,
+    /**
+     * 12: Muhammadiyah, Indonesia
+     */
+    MUHAMMADIYAH,
 }

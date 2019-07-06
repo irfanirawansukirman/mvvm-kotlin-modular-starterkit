@@ -1,9 +1,11 @@
-package id.pamoyanan_dev.l_extras.data.remote
+package id.pamoyanan_dev.l_extras.data.source.remote
 
 import android.app.Application
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import id.pamoyanan_dev.l_extras.BuildConfig
+import id.pamoyanan_dev.l_extras.base.BaseApiResponse
 import id.pamoyanan_dev.l_extras.data.model.Movies
+import id.pamoyanan_dev.l_extras.data.model.Result
 import id.pamoyanan_dev.l_extras.ext.isNetworkAvailable
 import kotlinx.coroutines.Deferred
 import okhttp3.Cache
@@ -18,7 +20,7 @@ import java.util.concurrent.TimeUnit
 interface ApiService {
 
     @GET("3/discover/movie?api_key=1b2f29d43bf2e4f3142530bc6929d341&sort_by=popularity.desc")
-    fun getMoviesAsync(): Deferred<Response<Movies>>
+    fun getMoviesAsync(): Deferred<BaseApiResponse<List<Result>>>
 
     companion object Builder {
 

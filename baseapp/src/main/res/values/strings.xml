@@ -2,4 +2,6 @@
     <string name="app_name">Insan</string>
     <string name="title_f_home">Module Title</string>
     <string name="title_f_kiblat">Module Title</string>
+    <string name="title_f_jadwal_sholat">Module Title</string>
+    <string name="title_f_baru">Baru</string>
 </resources>

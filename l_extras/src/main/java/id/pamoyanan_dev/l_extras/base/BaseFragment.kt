@@ -65,10 +65,6 @@ abstract class BaseFragment<VDB : ViewDataBinding, BVM : BaseViewModel> : Fragme
     companion object {
         const val MESSAGE_TOAST_TYPE = 0
         const val MESSAGE_SNACK_TYPE = 1
-
-        // preference key
-        const val QIBLA_DEGREE = "QIBLA_DEGREE"
-
         const val LOCATION_REQUEST_CODE = 123
     }
 }
